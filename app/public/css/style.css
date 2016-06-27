@@ -1,8 +1,49 @@
 /* Navigation */
 .navbar-inverse {
-	background: pink;
+	border-color: #fff;
+	background: rgba(0, 0, 0, .5); /* 81ed0f */
 }
 
-body {
-	background: pink;
+	.navbar-brand {
+		height: 60px;
+		padding: 0;
+	}
+
+		.nav-brand-symbol {
+			width: 60%; 
+		}
+
+	.navbar-inverse .navbar-nav > li > a {
+		color: #fff;
+	} 
+
+
+
+/* Jumbotron */
+.jumbotron {
+	background: none;
 }
+
+	.video-container {
+		height: 650px;
+		margin-top: -60px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.video-distortion {
+		height: 650px;
+		width: 100%;
+		margin-top: -650px;
+		background: url(../images/video-distortion.png);
+	}
+
+		video {
+			width: 100%;
+			position: absolute;
+			z-index: -1;
+		}
+
+	.jumbotron-content {
+		margin-top: -300px;
+	}
