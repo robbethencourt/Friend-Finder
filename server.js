@@ -21,12 +21,16 @@ app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 
 
 
+// Static files
+// needs to be called before the routes in order to work
+app.use(express.static('app/public'));
+
+
+
 // Router
 // the below require statements point our server to the route files that tell our server how to respond when visitors request data from our URLs
 require('./app/routing/api-routes.js')(app);
 require('./app/routing/html-routes.js')(app);
-
-app.use(express.static('public'));
 
 
 
