@@ -1,7 +1,7 @@
 /* Navigation */
 .navbar-inverse {
-	border-color: #fff;
-	background: rgba(0, 0, 0, .5); /* 81ed0f */
+	border: none;
+	background: rgba(0,0,0, .5); /* 81ed0f */
 }
 
 	.navbar-brand {
@@ -15,6 +15,7 @@
 
 	.navbar-inverse .navbar-nav > li > a {
 		color: #fff;
+		font-weight: bold;
 	} 
 
 
@@ -45,5 +46,24 @@
 		}
 
 	.jumbotron-content {
-		margin-top: -300px;
+		margin-top: -450px;
+		padding: 25px 0 35px 0;
+		position: relative;
+		text-align: center;
+		color: #fff;
+		z-index: 999;
+		background: rgba(0,0,0, .5);
 	}
+
+		p.slogan {
+			font-size: 5em;
+			font-family: 'Permanent Marker';
+		}
+
+		.jumbotron-content .btn {
+			border: none;
+			background: #52e489;
+			color: #fff;
+			font-size: 2.5em;
+			font-family: 'Permanent Marker';
+		}
