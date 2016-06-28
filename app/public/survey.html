@@ -21,7 +21,7 @@
 <body>
 
 	<!-- nav -->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
   				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -53,6 +53,7 @@
 					<label>Link to Photo Image</label>
 					<input type="text" class="form-control" id="photo" />
 				</div>
+				<h3>Answer the following questions from 1 (Strongly Disagree) to 5 (Strongly Agree)</h3>
 				<div class="form-group">
 					<label>Your mind is always buzzing with unexplored ideas and plans</label>
 					<input type="range" class="rangeslider rangeslider--horizontal" id="q-1" min="1" max="5" step="1" value="3" />
@@ -103,7 +104,7 @@
 					<input type="range" class="rangeslider rangeslider--horizontal" id="q-10" min="1" max="5" step="1" value="3" />
 					<output id="op-10">3</output>
 				</div>
-				<button type="submit" class="btn btn-default">Match Me Up</button>
+				<button type="submit" class="btn btn-default" id="submit-survey">Match Me Up</button>
 			</form>
 		</div>
 	</div>
