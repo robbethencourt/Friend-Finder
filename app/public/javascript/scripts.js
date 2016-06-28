@@ -97,6 +97,9 @@ $(document).ready(function(){
 
 				// compare the scores to the user's score. We're passing in the app's stored scores we got from the getScores function
 				function compareScores(stored_scores) {
+
+					// create an empty array so that we can pass each of the score differentials to it
+					var total_dif_array = [];
 					
 					// loop thorugh the stored scores
 					for (var i = 0; i < stored_scores.length; i++) {
@@ -118,11 +121,38 @@ $(document).ready(function(){
 
 						} // end for loop
 
-						console.log(total_dif);
+						// push each score differential into the total_dif_array
+						total_dif_array.push(total_dif);
 
 					} // end for loop
 
+					// call the matchUser function and pass the array of score differentials
+					matchUser(total_dif_array);
+
 				} // end compareScores()
+
+				function matchUser(score_differentials) {
+
+					console.log(score_differentials);
+					
+					var index_of_match = 0;
+					var lowest_value = score_differentials[0];
+					var i;
+					var score_differentials_length = score_differentials.length;
+					for (var i = 0; i < score_differentials_length; i++) {
+						
+						if (score_differentials[i] < lowest_value) {
+
+							lowest_value = score_differentials[i];
+							index_of_match = i;
+
+						}
+
+					} // end for loop
+
+					console.log(index_of_match);
+
+				} // end matchUser()
 
 				// call the getScores funciton to start the getting of scores and comparison of them
 				getScores();
