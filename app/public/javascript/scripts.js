@@ -53,9 +53,69 @@ $(document).ready(function(){
 		// create a new instance of Friend for the new user and pass the name, image url and scores to the new user object
 		var user = new Friend(the_name, the_image_url, the_scores);
 
-		console.log(user);
+		postData(user);
 
 	} // end surveyResults()
+
+	function postData(user) {
+
+		var api = window.location.origin + '/api/friends';
+
+		var request = {
+			url: api,
+			method: 'GET'
+		}
+
+		$.ajax(request)
+
+			.done(function(response) {
+
+				function getScores() {
+
+					var stored_scores = [];
+					
+					var i;
+					var response_length = response.length;
+					for (i = 0; i < response_length; i++) {
+
+						stored_scores.push(response[i].scores);
+
+					}
+
+					compareScores(stored_scores);
+
+				}
+
+				function compareScores(stored_scores) {
+					
+					for (var i = 0; i < stored_scores.length; i++) {
+
+						var total_dif = 0;
+
+						for (var j = 0; j < stored_scores[i].length; j++) {
+
+							var score_dif = stored_scores[i][j] - parseInt(user.scores[j]);
+
+							var positive_score_dif = -score_dif > 0 ? -score_dif : score_dif;
+
+							total_dif += positive_score_dif;
+
+						}
+
+						console.log(total_dif);
+
+					}
+
+				}
+
+				getScores();
+
+
+			}); // end ajax
+		
+		console.log(user);
+	
+	}
 
 
 	// Events
