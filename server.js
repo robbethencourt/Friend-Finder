@@ -41,4 +41,4 @@ app.listen(PORT, function() {
 	// console log to the terminal window to let us know everything's running smooth
 	console.log('App listening on PORT: ' + PORT);
 
-});
+}); // end app.listen()
