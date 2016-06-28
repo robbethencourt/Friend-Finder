@@ -53,69 +53,83 @@ $(document).ready(function(){
 		// create a new instance of Friend for the new user and pass the name, image url and scores to the new user object
 		var user = new Friend(the_name, the_image_url, the_scores);
 
-		postData(user);
+		getData(user);
 
 	} // end surveyResults()
 
-	function postData(user) {
+	// passing the user data
+	function getData(user) {
 
+		// store the api url in a variable
 		var api = window.location.origin + '/api/friends';
 
+		// create the request object to pass to the ajax call
 		var request = {
 			url: api,
 			method: 'GET'
 		}
 
+		// ajax request with request object passed
 		$.ajax(request)
 
 			.done(function(response) {
 
+				// function to get the scores of each of the users stored in the app
 				function getScores() {
 
+					// variable to store the scores set to an empty array
 					var stored_scores = [];
 					
+					// loop through the ajax response
 					var i;
 					var response_length = response.length;
 					for (i = 0; i < response_length; i++) {
 
+						// push each of the scores arrays from the ajax response into the stored scores array
 						stored_scores.push(response[i].scores);
 
-					}
+					} // end for loop
 
+					// call the compareScores function and pass in all the stored scores we got from teh ajax call
 					compareScores(stored_scores);
 
-				}
+				} // end getScores()
 
+				// compare the scores to the user's score. We're passing in the app's stored scores we got from the getScores function
 				function compareScores(stored_scores) {
 					
+					// loop thorugh the stored scores
 					for (var i = 0; i < stored_scores.length; i++) {
 
+						// declare a variable to get the total difference of the user's score to each of the stored scores in our app
 						var total_dif = 0;
 
+						// loop through the array of scores for each user stored in our app
 						for (var j = 0; j < stored_scores[i].length; j++) {
 
+							// ge the difference in scores. We need to convert the user's scores into an integer as that's being passed as a string
 							var score_dif = stored_scores[i][j] - parseInt(user.scores[j]);
 
+							// get a positive integer from the scores by checking if the score difference is less than zero, and if it is, then negate it to get a positive. If the score differenece is greater than zero return the score diferrence without any changes 
 							var positive_score_dif = -score_dif > 0 ? -score_dif : score_dif;
 
+							// add the positive score difference to the total_dif variable we declared outside this for loop
 							total_dif += positive_score_dif;
 
-						}
+						} // end for loop
 
 						console.log(total_dif);
 
-					}
+					} // end for loop
 
-				}
+				} // end compareScores()
 
+				// call the getScores funciton to start the getting of scores and comparison of them
 				getScores();
 
-
 			}); // end ajax
-		
-		console.log(user);
 	
-	}
+	} // end getData()
 
 
 	// Events
