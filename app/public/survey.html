@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="uses the giphy api to show gifs of endangered animals">
+		<meta name="author" content="Rob Bethencourt">
+		
+		<title>Lime Friend Finder</title>
+
+		<!-- Bootstrap minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Google Fonts | Permanent Marker -->
+		<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+
+		<!-- My Styles -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	</head>
+<body>
+
+	<!-- nav -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span> 
+  				</button>
+  				<a class="navbar-brand" href="#top"><img src="images/lime-logo.png" class="nav-brand-symbol" alt="Lime logo in white." /></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+  				<ul class="nav navbar-nav navbar-right">
+  					<li><a href="http://localhost:3000">Home</a></li>
+    				<li><a href="#about">About</a></li>
+    				<li><a href="#limin">What's Limin'</a></li>
+  				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Survey -->
+	<div class="survey">
+		<div class="container">
+			<form>
+				<div class="form-group">
+					<label>Name</label>
+					<input type="text" class="form-control" id="name" placeholder="Jane Doe" />
+				</div>
+				<div class="form-group">
+					<label>Link to Photo Image</label>
+					<input type="text" class="form-control" id="photo" />
+				</div>
+				<div class="form-group">
+					<label>Your mind is always buzzing with unexplored ideas and plans</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-1" min="1" max="5" step="1" value="3" />
+					<output id="op-1">3</output>
+				</div>
+				<div class="form-group">
+					<label>Generally speaking, you rely more on your experience than your imagination</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-2" min="1" max="5" step="1" value="3" />
+					<output id="op-2">3</output>
+				</div>
+				<div class="form-group">
+					<label>You find it easy to stay relaxed and focused even when there is some pressure</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-3" min="1" max="5" step="1" value="3" />
+					<output id="op-3">3</output>
+				</div>
+				<div class="form-group">
+					<label>You rarely do something just out of sheer curiosity</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-4" min="1" max="5" step="1" value="3" />
+					<output id="op-4">3</output>
+				</div>
+				<div class="form-group">
+					<label>People can rarely upset you</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-5" min="1" max="5" step="1" value="3" />
+					<output id="op-5">3</output>
+				</div>
+				<div class="form-group">
+					<label>It is often difficult for you to relate to other people’s feelings</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-6" min="1" max="5" step="1" value="3" />
+					<output id="op-6">3</output>
+				</div>
+				<div class="form-group">
+					<label>In a discussion, truth should be more important than people’s sensitivities</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-7" min="1" max="5" step="1" value="3" />
+					<output id="op-7">3</output>
+				</div>
+				<div class="form-group">
+					<label>You rarely get carried away by fantasies and ideas</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-8" min="1" max="5" step="1" value="3" />
+					<output id="op-8">3</output>
+				</div>
+				<div class="form-group">
+					<label>You think that everyone’s views should be respected regardless of whether they are supported by facts or not</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-9" min="1" max="5" step="1" value="3" />
+					<output id="op-9">3</output>
+				</div>
+				<div class="form-group">
+					<label>You feel more energetic after spending time with a group of people</label>
+					<input type="range" class="rangeslider rangeslider--horizontal" id="q-10" min="1" max="5" step="1" value="3" />
+					<output id="op-10">3</output>
+				</div>
+				<button type="submit" class="btn btn-default">Match Me Up</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<p>&#169; 2016 Robert Bethencourt All Rights Reserved</p>
+		</div>
+	</footer>
+
+	<!-- jQuery CDN -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+	<!-- My Scripts -->
+	<script type="text/javascript" src="javascript/scripts.js"></script>
+
+</body>
+</html>
