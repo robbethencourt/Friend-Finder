@@ -213,4 +213,27 @@ $(document).ready(function(){
 
     }); // end submit-survey on click()
 
+    $(window).resize(function() {
+    	
+    	videoDistortion();
+
+    });
+
+    function videoDistortion() {
+    	
+    	var video_height = $('video').height();
+
+    	if (video_height < 650) {
+
+    		$('.video-distortion').css('height', video_height);
+
+    		$('.jumbotron-content').css('margin-top', (video_height - 70) * -1);
+
+    		$('.video-container').css('height', video_height);
+    	}
+
+    }
+
+    videoDistortion();
+
 }); // end jquery()

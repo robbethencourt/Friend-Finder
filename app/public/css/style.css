@@ -18,27 +18,32 @@
 	.navbar-inverse .navbar-nav > li > a {
 		color: #fff;
 		font-weight: bold;
-	} 
+	}
+
+	.navbar-inverse .navbar-nav > li > a:hover {
+		background: #99F7BD;
+	}
+
+	.navbar-inverse .navbar-toggle {
+		border: none;
+	}
+
+	.navbar-inverse .navbar-toggle:hover {
+		background: #99F7BD;
+	}
 
 
 
 /* Jumbotron */
 .jumbotron {
+	padding-top: 0;
 	background: none;
 }
 
 	.video-container {
 		height: 650px;
-		margin-top: -60px;
 		position: relative;
 		overflow: hidden;
-	}
-
-	.video-distortion {
-		height: 650px;
-		width: 100%;
-		margin-top: -650px;
-		background: url(../images/video-distortion.png);
 	}
 
 		video {
@@ -47,9 +52,15 @@
 			z-index: -1;
 		}
 
+	.video-distortion {
+		height: 650px;
+		width: 100%;
+		background: url(../images/video-distortion.png);
+	}
+
 	.jumbotron-content {
-		margin-top: -450px;
-		padding: 25px 0 35px 0;
+		margin-top: 60px;
+		padding: 25px 0 50px 0;
 		position: relative;
 		text-align: center;
 		color: #fff;
@@ -58,8 +69,15 @@
 	}
 
 		p.slogan {
-			font-size: 5em;
-			font-family: 'Permanent Marker';
+			margin: 0;
+			font-size: 5vw;
+			font-family: 'Caveat';
+		}
+
+		p.jc-p {
+			margin-bottom: 30px;
+			font-size: 1.1em;
+			font-style: italic;
 		}
 
 		.btn {
@@ -67,21 +85,21 @@
 			background: #52e489;
 			color: #fff;
 			font-size: 2.5em;
-			font-family: 'Permanent Marker';
+			font-family: 'Caveat';
 		}
 
 
 
 /* About */
 .about {
-	margin-top: 200px;
+	margin-top: 50px;
 }
 
 	.about h2 {
 		padding: 0 0 50px 0;
 		color: #52e489;
 		text-align: center;
-		font-family: 'Permanent Marker';
+		font-family: 'Caveat';
 	}
 
 
@@ -148,4 +166,24 @@ footer {
 	padding: 25px 0 20px 0;
 	color: #fff;
 	background: #52e489;
+}
+
+
+
+/* Media Queries */
+@media only screen and (min-width: 725px) {
+
+	.jumbotron-content {
+		margin-top: -500px;
+	}
+
+}
+
+@media only screen and (min-width: 768px) {
+
+	.navbar-nav > li > a {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
 }
