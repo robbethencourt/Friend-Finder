@@ -163,10 +163,23 @@ $(document).ready(function(){
 				} // end getIndex()
 
 				function matchUser(index_of_match) {
-					
-					console.log(index_of_match);
 
-					console.log(response[index_of_match]);
+					// grab the name and image link of the best match by using the index number stored in index_of_match
+					var name_of_match = response[index_of_match].name;
+					var phot_link = response[index_of_match].photo;
+
+					// store the modal-body div into a variable
+					var modal_body = $('.modal-body');
+
+					// set the text (name of the best match) to the created h2 element and store in a variable
+					var name_heading = $('<h2>').text(name_of_match);
+
+					// create the image element and set the url of the best match and create an alt tag with the corresponding name
+					var img_elm = $('<img src="' + phot_link + '" alt="Photo of ' + name_of_match + '">');
+
+					// append both the h2 and image elements with name and photo
+					$(modal_body).append(name_heading);
+					$(modal_body).append(img_elm);
 
 				} // end matchUser()
 

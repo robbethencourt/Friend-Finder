@@ -136,6 +136,13 @@
 
 
 
+/* Modal */
+.modal-body img {
+	max-width: 100%;
+}
+
+
+
 /* footer */
 footer {
 	padding: 25px 0 20px 0;
