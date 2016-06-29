@@ -213,6 +213,30 @@ $(document).ready(function(){
 
     }); // end submit-survey on click()
 
+    // scroll script for nav links
+	$("nav a[href^='#']").on('click', function(e) {
+
+	   // prevent default anchor click behavior
+	   e.preventDefault();
+
+	   // store hash
+	   var hash = this.hash;
+
+	   // animate
+	   $('html, body').animate({
+
+	       scrollTop: $(hash).offset().top
+
+	     }, 300, function(){
+
+	       // when done, add hash to url
+	       // (default click behaviour)
+	       window.location.hash = hash;
+
+	     }); // end animate
+
+	}); // end scroll script
+
     // when the window resizes call the videoDistortion function to update the height
     $(window).resize(function() {
     	

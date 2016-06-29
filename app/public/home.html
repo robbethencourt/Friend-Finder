@@ -18,10 +18,10 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	</head>
-<body>
+<body id="home">
 
 	<!-- nav -->
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
   				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -33,9 +33,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
   				<ul class="nav navbar-nav navbar-right">
-  					<li><a href="http://localhost:3000">Home</a></li>
-    				<li><a href="#about">About</a></li>
-    				<li><a href="#limin">What's Limin'</a></li>
+  					<li><a href="#home">Home</a></li>
+    				<li><a href="#about-id">About</a></li>
+    				<li><a href="#limin-id">What's Limin'</a></li>
   				</ul>
 			</div>
 		</div>
@@ -55,20 +55,26 @@
 				<a href="http://localhost:3000/survey" class="btn btn-default">Start Limin'</a>
 			</div>
 		</div>
-		
-		
 	</div>
 
 	<!-- about -->
-	<div class="about">
+	<div class="about" id="about-id">
 		<div class="container">
 			<h2>How Does This Work?</h2>
 			<div class="row">
 				<div class="col-md-6">
 					<h3>Give Us Your Thoughts</h3>
-					<p>We'll ask you a series of questions. Your answers will be matched up with other Lime users to find you the best match.</p>
+					<p>We'll ask you some questions. Your answers will be matched up with other Lime users to find you the best match.</p>
+					<p class="about-comment">Our algorithms were developed by NASA scientists...no really...well, not really.</p>
 					<h3>You Mean I Have to Do Some Work?</h3>
 					<p>It's not a lot of questions, and the results are turned around quick. This way you can get to limin' with some new found friends.</p>
+					<p class="about-comment">We're only going to ask you 1 question, in 27 different parts. Kidding.</p>
+					<h3>Picture Time</h3>
+					<p>You can take a selfie, or upload some professional looking headshot. Really, just something that you look haflway decent in will work.</p>
+					<p class="about-comment">No pics of dogs, unless you plan on limin' with your dog, in which case go for it. Cat pics are always welcome.</p>
+					<h3>Relax and Enjoy</h3>
+					<p>This one's pretty simple...</p>
+					<p class="about-comment">...but for some it's probably the hardest to follow.</p>
 				</div>
 				<div class="col-md-6">
 					<img src="images/survey-display-iphone.jpg" />
@@ -78,7 +84,7 @@
 	</div>
 
 	<!-- limin -->
-	<div class="limin">
+	<div class="limin" id="limin-id">
 		<div class="container">
 			<h2>Limin'</h2>
 			<p>what you do when you're not really doin' anything</p>
