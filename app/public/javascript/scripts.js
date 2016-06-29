@@ -127,30 +127,46 @@ $(document).ready(function(){
 					} // end for loop
 
 					// call the matchUser function and pass the array of score differentials
-					matchUser(total_dif_array);
+					getIndex(total_dif_array);
 
 				} // end compareScores()
 
-				function matchUser(score_differentials) {
-
-					console.log(score_differentials);
+				function getIndex(score_differentials) {
 					
+					// set a variable to hold the index we will pass to the matchUser function
 					var index_of_match = 0;
+
+					// set the lowest score to the first item in the score_differentials array. We will update this variable with the acutal lowest score in the for loop below
 					var lowest_value = score_differentials[0];
+
+					// loop through the score differentials
 					var i;
 					var score_differentials_length = score_differentials.length;
 					for (var i = 0; i < score_differentials_length; i++) {
 						
+						// check each array item and compare the the lowest value, which we set to the first item in the array outside of the for loop
 						if (score_differentials[i] < lowest_value) {
 
+							// reset the lowest_value to the lowest value checked in the for loop
 							lowest_value = score_differentials[i];
+
+							// set the index match to be the inde of the lowest value
 							index_of_match = i;
 
-						}
+						} // end if
 
 					} // end for loop
 
+					// call matchUser and pass the index number so we can match that with the user in the response callback from .done
+					matchUser(index_of_match);
+
+				} // end getIndex()
+
+				function matchUser(index_of_match) {
+					
 					console.log(index_of_match);
+
+					console.log(response[index_of_match]);
 
 				} // end matchUser()
 
