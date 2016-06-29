@@ -11,8 +11,8 @@
 		<!-- Bootstrap minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-		<!-- Google Fonts | Permanent Marker -->
-		<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+		<!-- Google Fonts | Caveat -->
+		<link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
 
 		<!-- My Styles -->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -34,8 +34,6 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
   				<ul class="nav navbar-nav navbar-right">
   					<li><a href="http://localhost:3000">Home</a></li>
-    				<li><a href="#about">About</a></li>
-    				<li><a href="#limin">What's Limin'</a></li>
   				</ul>
 			</div>
 		</div>
@@ -104,7 +102,7 @@
 					<input type="range" class="rangeslider rangeslider--horizontal" id="q-10" min="1" max="5" step="1" value="3" />
 					<output id="op-10">3</output>
 				</div>
-				<button type="submit" class="btn btn-default" id="submit-survey" data-toggle="modal" data-target="#myModal">Match Me Up</button>
+				<button type="submit" class="btn btn-default btn-block" id="submit-survey" data-toggle="modal" data-target="#myModal">Match Me Up</button>
 			</form>
 		</div>
 	</div>
@@ -120,10 +118,6 @@
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Best Match</h4>
-				</div>
 				<div class="modal-body"></div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

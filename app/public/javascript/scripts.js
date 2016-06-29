@@ -213,4 +213,54 @@ $(document).ready(function(){
 
     }); // end submit-survey on click()
 
+    // scroll script for nav links
+	$("nav a[href^='#']").on('click', function(e) {
+
+	   // prevent default anchor click behavior
+	   e.preventDefault();
+
+	   // store hash
+	   var hash = this.hash;
+
+	   // animate
+	   $('html, body').animate({
+
+	       scrollTop: $(hash).offset().top
+
+	     }, 300, function(){
+
+	       // when done, add hash to url
+	       // (default click behaviour)
+	       window.location.hash = hash;
+
+	     }); // end animate
+
+	}); // end scroll script
+
+    // when the window resizes call the videoDistortion function to update the height
+    $(window).resize(function() {
+    	
+    	videoDistortion();
+
+    }); // end window.resize()
+
+    function videoDistortion() {
+    	
+    	// grab the current height of the video
+    	var video_height = $('video').height();
+
+    	// if the video is smaller than 650px
+    	if (video_height < 650) {
+
+    		// adjust the css of each of the 3 elememts
+    		$('.video-distortion').css('height', video_height);
+    		$('.jumbotron-content').css('margin-top', (video_height - 70) * -1);
+    		$('.video-container').css('height', video_height);
+
+    	} // end if
+
+    } // end videoDistortion()
+
+    videoDistortion();
+
 }); // end jquery()
