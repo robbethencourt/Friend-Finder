@@ -213,26 +213,29 @@ $(document).ready(function(){
 
     }); // end submit-survey on click()
 
+    // when the window resizes call the videoDistortion function to update the height
     $(window).resize(function() {
     	
     	videoDistortion();
 
-    });
+    }); // end window.resize()
 
     function videoDistortion() {
     	
+    	// grab the current height of the video
     	var video_height = $('video').height();
 
+    	// if the video is smaller than 650px
     	if (video_height < 650) {
 
+    		// adjust the css of each of the 3 elememts
     		$('.video-distortion').css('height', video_height);
-
     		$('.jumbotron-content').css('margin-top', (video_height - 70) * -1);
-
     		$('.video-container').css('height', video_height);
-    	}
 
-    }
+    	} // end if
+
+    } // end videoDistortion()
 
     videoDistortion();
 
