@@ -97,6 +97,9 @@ $(document).ready(function(){
 
 				// compare the scores to the user's score. We're passing in the app's stored scores we got from the getScores function
 				function compareScores(stored_scores) {
+
+					// create an empty array so that we can pass each of the score differentials to it
+					var total_dif_array = [];
 					
 					// loop thorugh the stored scores
 					for (var i = 0; i < stored_scores.length; i++) {
@@ -118,11 +121,54 @@ $(document).ready(function(){
 
 						} // end for loop
 
-						console.log(total_dif);
+						// push each score differential into the total_dif_array
+						total_dif_array.push(total_dif);
 
 					} // end for loop
 
+					// call the matchUser function and pass the array of score differentials
+					getIndex(total_dif_array);
+
 				} // end compareScores()
+
+				function getIndex(score_differentials) {
+					
+					// set a variable to hold the index we will pass to the matchUser function
+					var index_of_match = 0;
+
+					// set the lowest score to the first item in the score_differentials array. We will update this variable with the acutal lowest score in the for loop below
+					var lowest_value = score_differentials[0];
+
+					// loop through the score differentials
+					var i;
+					var score_differentials_length = score_differentials.length;
+					for (var i = 0; i < score_differentials_length; i++) {
+						
+						// check each array item and compare the the lowest value, which we set to the first item in the array outside of the for loop
+						if (score_differentials[i] < lowest_value) {
+
+							// reset the lowest_value to the lowest value checked in the for loop
+							lowest_value = score_differentials[i];
+
+							// set the index match to be the inde of the lowest value
+							index_of_match = i;
+
+						} // end if
+
+					} // end for loop
+
+					// call matchUser and pass the index number so we can match that with the user in the response callback from .done
+					matchUser(index_of_match);
+
+				} // end getIndex()
+
+				function matchUser(index_of_match) {
+					
+					console.log(index_of_match);
+
+					console.log(response[index_of_match]);
+
+				} // end matchUser()
 
 				// call the getScores funciton to start the getting of scores and comparison of them
 				getScores();
