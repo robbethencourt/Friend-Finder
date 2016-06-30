@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 		} // end if
 
-		// store each output element in an variable as an array
+		// store each output element in a variable as an array
 		var output = $('output');
 
 		// create the scores array and set to empty
@@ -63,7 +63,7 @@ $(document).ready(function(){
 		// loop through the output elements
 		var i;
 		var output_length = output.length;
-		for (var i = 0; i < output_length; i++) {
+		for (i = 0; i < output_length; i++) {
 
 			// push each text, which is the value the user assigned, to the scores array
 			the_scores.push($(output[i]).text());
@@ -122,13 +122,16 @@ $(document).ready(function(){
 					var total_dif_array = [];
 					
 					// loop thorugh the stored scores
-					for (var i = 0; i < stored_scores.length; i++) {
+					var i;
+					var stored_scores_length = stored_scores.length;
+					for (i = 0; i < stored_scores_length; i++) {
 
 						// declare a variable to get the total difference of the user's score to each of the stored scores in our app
 						var total_dif = 0;
 
 						// loop through the array of scores for each user stored in our app
-						for (var j = 0; j < stored_scores[i].length; j++) {
+						var j;
+						for (j = 0; j < stored_scores[i].length; j++) {
 
 							// ge the difference in scores. We need to convert the user's scores into an integer as that's being passed as a string
 							var score_dif = stored_scores[i][j] - parseInt(user.scores[j]);
@@ -162,7 +165,7 @@ $(document).ready(function(){
 					// loop through the score differentials
 					var i;
 					var score_differentials_length = score_differentials.length;
-					for (var i = 0; i < score_differentials_length; i++) {
+					for (i = 0; i < score_differentials_length; i++) {
 						
 						// check each array item and compare the the lowest value, which we set to the first item in the array outside of the for loop
 						if (score_differentials[i] < lowest_value) {
