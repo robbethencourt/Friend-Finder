@@ -159,7 +159,7 @@
 
 	input[type="text"] {
 		border: none;
-		color: #fff;
+		color: #52e489;
 		border: none;
 		box-shadow: none;
 		border-bottom: 1px solid #52e489;
@@ -170,6 +170,11 @@
 		border: none;
 		color: #fff;
 		box-shadow: none;
+	}
+
+	input[type="text"].error {
+		background: #ff0000;
+		border-bottom: 1px solid #ff0000;
 	}
 
 	/* placeholder text styles */
@@ -236,6 +241,14 @@
 
 	.modal-body img {
 		width: 100%;
+	}
+
+	.modal-body h3.error {
+		margin: 0;
+		padding: 10px;
+		color: #fff;
+		text-align: center;
+		background: #ff0000;
 	}
 
 

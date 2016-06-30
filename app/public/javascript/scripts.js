@@ -34,6 +34,26 @@ $(document).ready(function(){
 		// store the image url in a variable
 		var the_image_url = $('#photo').val().trim();
 
+		// check if the name and photo elements are empty strings
+		if (the_name === '' || the_image_url === '') {
+
+			// store the modal-body div into a variable
+			var modal_body = $('.modal-body');
+
+			// empty out the div in case the page hasn't reloaded
+			$(modal_body).empty();
+
+			// set the text (name of the best match) to the created h2 element and store in a variable
+			var error_message = $('<h3>').addClass('error').text('Woops! Looks like you forgot to enter your name or image url.');
+
+			// append both the h2 and image elements with name and photo
+			$(modal_body).append(error_message);
+
+			// calling return so that the function stops and not result is returned
+			return
+
+		} // end if
+
 		// store each output element in an variable as an array
 		var output = $('output');
 
@@ -171,6 +191,9 @@ $(document).ready(function(){
 					// store the modal-body div into a variable
 					var modal_body = $('.modal-body');
 
+					// empty out the div in case the page hasn't reloaded
+					$(modal_body).empty();
+
 					// set the text (name of the best match) to the created h2 element and store in a variable
 					var name_heading = $('<h2>').text(name_of_match);
 
@@ -190,6 +213,24 @@ $(document).ready(function(){
 	
 	} // end getData()
 
+	// validate the name and photo inputs
+	function validateForm(el_passed) {
+
+		// if the element passed, either the name or photo input, is an empty string
+		if ($(el_passed).val() === '') {
+			
+			// add the error class to that input field
+			$(el_passed).addClass('error');
+
+		} else {
+
+			// remove the error class from that input field
+			$(el_passed).removeClass('error');
+
+		} // end if else
+
+	} // end validateForm()
+
 
 	// Events
 
@@ -207,11 +248,37 @@ $(document).ready(function(){
 
     	// stop the page from reloading
     	e.preventDefault();
-    	
-    	// call the surveyResults function
-    	surveyResults();
+
+    	// pass the name and photo elements to check for validation when the form is submitted
+    	validateForm($('#name'));
+    	validateForm($('#photo'));
+
+		// call the surveyResults function
+		surveyResults();
 
     }); // end submit-survey on click()
+
+    // when focus leaves the name input
+    $('#name').blur(function(e) {
+    	
+    	// grab the this keyword
+    	e = this;
+
+    	// call the validateForm function and pass it this
+    	validateForm(e);
+
+    }); // end name blur()
+
+    // when focus leaves the photo input
+    $('#photo').blur(function(e) {
+    	
+    	// grab the this keyword
+    	e = this;
+
+    	// call the validateForm function and pass it this
+    	validateForm(e);
+
+    }); // end photo blur()
 
     // scroll script for nav links
 	$("nav a[href^='#']").on('click', function(e) {
